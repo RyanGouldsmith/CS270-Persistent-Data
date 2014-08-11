@@ -1,0 +1,3 @@
+/*Query 4 searches for the pistes that are currently open, together with the lifts that are currently operating and that provide
+access to those pistes */
+SELECT pl.pisteId, p.pistename, p.isopen, pl.liftID, l.liftname, l.isopen FROM PisteLift pl INNER JOIN Piste p ON (pl.pisteid=p.pisteID) INNER JOIN Lift l ON (pl.liftid=l.liftid) WHERE p.iopen='yes' AND l.isopen='yes';
